@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Photo Blog</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>My Photo Blog</span>
+        </div>
+
+        <nav class="nav">
+            <a href="#home">Trang chủ</a>
+            <a href="#posts">Bài viết</a>
+            <button id="themeBtn" class="icon-btn" title="Đổi giao diện">
+                🌙
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">MY PERSONAL SPACE</p>
+
+            <h1>
+                Những khoảnh khắc<br>
+                <span>mình muốn lưu lại.</span>
+            </h1>
+
+            <p class="hero-description">
+                Một góc nhỏ để lưu những bức ảnh,
+                những ngày bình thường và những câu chuyện của mình.
+            </p>
+
+            <a href="#posts" class="hero-btn">
+                Xem bài viết ↓
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- BLOG -->
+    <main id="posts" class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="small-title">MY BLOG</p>
+                <h2>Bài viết mới nhất</h2>
+            </div>
+
+            <div class="search-box">
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Tìm bài viết..."
+                >
+                <span>⌕</span>
+            </div>
+
+        </div>
+
+
+        <!-- POSTS -->
+        <section id="postList" class="post-grid"></section>
+
+
+        <!-- EMPTY -->
+        <div id="emptyMessage" class="empty hidden">
+
+            <div class="empty-icon">📷</div>
+
+            <h3>Chưa có bài viết</h3>
+
+            <p>
+                Hãy thêm bài viết đầu tiên của bạn.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ADD POST BUTTON -->
+    <button id="addPostBtn" class="add-btn">
+        <span>＋</span>
+        Đăng bài
+    </button>
+
+
+    <!-- ADD POST MODAL -->
+    <div id="modal" class="modal hidden">
+
+        <div class="modal-overlay"></div>
+
+        <div class="modal-box">
+
+            <button id="closeModal" class="close-btn">
+                ×
+            </button>
+
+            <p class="small-title">NEW POST</p>
+
+            <h2>Đăng bài viết mới</h2>
+
+            <form id="postForm">
+
+                <label>
+                    Tiêu đề
+                </label>
+
+                <input
+                    id="postTitle"
+                    type="text"
+                    placeholder="Ví dụ: Một ngày thật đẹp..."
+                    required
+                >
+
+
+                <label>
+                    Nội dung
+                </label>
+
+                <textarea
+                    id="postContent"
+                    rows="5"
+                    placeholder="Viết vài dòng về bức ảnh..."
+                    required
+                ></textarea>
+
+
+                <label>
+                    Hình ảnh
+                </label>
+
+                <div class="upload-box">
+
+                    <input
+                        id="postImage"
+                        type="file"
+                        accept="image/*"
+                        required
+                    >
+
+                    <div class="upload-content">
+                        <span>📷</span>
+                        <strong>Chọn ảnh</strong>
+                        <small>PNG, JPG, WEBP</small>
+                    </div>
+
+                </div>
+
+
+                <div id="imagePreview" class="preview hidden">
+                    <img id="previewImg" src="" alt="Preview">
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Đăng bài
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © <span id="year"></span> My Photo Blog
+        </p>
+
+        <p>
+            Made with ♡
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
